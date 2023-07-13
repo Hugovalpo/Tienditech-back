@@ -1,6 +1,6 @@
 require("dotenv").config();
 var express = require("express");
-const helmet = require("helmet");
+//const helmet = require("helmet");
 const connection = require("./models/connection");
 
 var path = require("path");
@@ -16,7 +16,7 @@ const articlesRouter = require("./routes/articles");
 var app = express();
 
 app.use(cors());
-app.use(helmet());
+//app.use(helmet());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
