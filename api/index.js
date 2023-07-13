@@ -24,8 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // router prefixes
-app.use("/", indexRouter);
-app.use("/articles", articlesRouter);
+app.use("/api/", indexRouter);
+app.use("/api/articles", articlesRouter);
 //app.use("/brands", brandsRouter);
 
 module.exports = app;
