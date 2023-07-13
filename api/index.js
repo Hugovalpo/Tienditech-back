@@ -8,8 +8,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 //router
-const indexRouter = require("./routes/index");
-const articlesRouter = require("./routes/articles");
+const indexRouter = require("../routes/index");
+const articlesRouter = require("../routes/articles");
 //const brandsRouter = require("./routes/brands");
 
 var app = express();
@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // router prefixes
-app.use("/api/", indexRouter);
+app.use("/api", indexRouter);
 app.use("/api/articles", articlesRouter);
 //app.use("/brands", brandsRouter);
 
