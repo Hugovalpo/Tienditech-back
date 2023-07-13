@@ -8,7 +8,6 @@ router.get("/", async (req, res) => {
   res.send(AllArticles);
 });
 
-
 // search all articles from same type
 router.get("/:typeSearch", async (req, res) => {
   const { typeSearch } = req.params;
@@ -32,9 +31,6 @@ router.get("/:typeSearch", async (req, res) => {
   });
 });
 
-
-
-
 // search article by word in label
 router.get("/search/:search", async (req, res) => {
   const { search } = req.params;
@@ -57,8 +53,6 @@ router.get("/search/:search", async (req, res) => {
     searchResult,
   });
 });
-
-
 
 // Get Article by reference
 router.get("/:ref", async (req, res) => {
@@ -84,12 +78,9 @@ router.get("/:ref", async (req, res) => {
   });
 });
 
-
 // adding  a new article
 router.post("/addArticle", async (req, res) => {
-
-  const { type, brand, model, label, price, img, description, reference } =
-    req.body;
+  const { type, brand, model, label, price, img, description, ref } = req.body;
 
   const newArticle = new Article({
     type,
